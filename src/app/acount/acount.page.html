@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>acount</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true" id="content">
+  <div id="container-form">
+    <ion-item id="input">
+      <ion-label position="floating">Nombres</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-button id="Boton-entrar" expand="block">Crear cuenta</ion-button>
+  </div>
 </ion-content>

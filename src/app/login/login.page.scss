@@ -1,0 +1,25 @@
+#content {
+    --background: url(../../assets/back.png);
+    text-align: center;
+    align-items: center;
+}
+#content #container-form {
+    background-color: rgba(0, 0, 0, 0.836);
+    border-radius: 5px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    padding: 5px;
+}
+#container-form #input {
+    --background: none;
+    color: rgb(255, 162, 41);
+    margin-bottom: 10px;
+}
+#container-form ion-button {
+    margin-top: 40px;
+}
+#container-form #Boton-entrar{
+    --background: linear-gradient(to right top, #ff0000, #ff6500, #f99800, #ecc400, #daeb12);
+}

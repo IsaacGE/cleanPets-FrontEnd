@@ -1,9 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>citas</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true" id="content">
+  <div id="container-form">
+    <ion-item id="input">
+      <ion-label position="floating">Titular</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Numero de telefono</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item id="input2">
+      <ion-label position="stacked">Fecha de la cita</ion-label>
+      <ion-input type="date"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Servicios</ion-label>
+      <ion-select>
+        <ion-select-option value="Bañado">Bañado</ion-select-option>
+        <ion-select-option value="CorteUñas">Corte de uñas</ion-select-option>
+        <ion-select-option value="CortePelo">Corte de pelo</ion-select-option>
+        <ion-select-option value="LimpiezaDientes">Limpieza de dientes</ion-select-option>
+        <ion-select-option value="LimpiezaOrejas">Limpieza de orejas</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Tipo de mascota</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-button id="Boton-entrar" expand="block">Confirmar cita</ion-button>
+  </div>
 </ion-content>

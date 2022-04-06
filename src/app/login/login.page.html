@@ -1,9 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true" id="content">
+  <div id="container-form">
+    <ion-item id="input">
+      <ion-label position="floating">Nombre de Usuario:</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Contraseña:</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-button id="Boton-entrar" expand="block">Iniciar Sesión</ion-button>
+  </div>
 </ion-content>
