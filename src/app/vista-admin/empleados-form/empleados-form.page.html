@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>empleadosForm</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true" id="content">
+  <div id="container-form">
+    <ion-item id="input">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Numero de telefono</ion-label>
+      <ion-input type="number" ></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Codgio de Personal</ion-label>
+      <ion-input type="number" ></ion-input>
+    </ion-item>
+    <ion-item id="input2">
+      <ion-label position="stacked">Fecha del registro</ion-label>
+      <ion-input type="date" ></ion-input>
+    </ion-item>
+    <ion-button id="Boton-entrar" expand="block" >Agregar empleado</ion-button>
+  </div>
 </ion-content>
