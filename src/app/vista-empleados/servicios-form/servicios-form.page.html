@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>serviciosForm</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true" id="content">
+  <div id="container-form">
+    <ion-item id="input">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-textarea type="text"></ion-textarea>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item id="input">
+      <ion-label position="floating">Duración</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-button id="Boton-entrar" expand="block">Confirmar cita</ion-button>
+  </div>
 </ion-content>

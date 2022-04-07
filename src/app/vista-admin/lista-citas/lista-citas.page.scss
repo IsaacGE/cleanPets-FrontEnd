@@ -1,0 +1,21 @@
+#content {
+    --background: rgb(89, 163, 197);
+    text-align: center;
+    align-items: center;
+}
+
+#content ion-card{
+    background-color: rgba(0, 0, 0, 0.836);
+    text-align: justify;
+}
+
+#content ion-card ion-card-header ion-card-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+#content ion-card ion-card-content p{
+    font-size: 15px;
+    color: white;
+}
