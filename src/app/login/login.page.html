@@ -8,6 +8,9 @@
       <ion-label position="floating">Contraseña:</ion-label>
       <ion-input type="password"></ion-input>
     </ion-item>
-    <ion-button id="Boton-entrar" expand="block">Iniciar Sesión</ion-button>
+    <div class="botones">
+      <ion-button expand="block">Iniciar Sesión</ion-button>
+      <ion-button (click)="cuestionarios.EnviarAcount()" expand="block">Crear cuenta</ion-button>
+    </div>
   </div>
 </ion-content>

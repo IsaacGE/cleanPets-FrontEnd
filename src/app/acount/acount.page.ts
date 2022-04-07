@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CuentaService } from '../services/cuenta.service';
 
 @Component({
   selector: 'app-acount',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcountPage implements OnInit {
 
-  constructor() { }
+  constructor(private cuestionarios:CuentaService) { }
 
   ngOnInit() {
   }
