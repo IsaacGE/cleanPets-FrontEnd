@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosServiceService } from '../services/usuarios-service.service';
 
 @Component({
   selector: 'app-administrador',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministradorPage implements OnInit {
 
-  constructor() { }
+  constructor(public userService:UsuariosServiceService) {
+    
+  }
 
   ngOnInit() {
   }

@@ -38,3 +38,17 @@ ion-content {
 .btn-update:focus {
     transform: scale(1.2);
 }
+.logout-content {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.582);
+    border-radius: 5px;
+    padding: 5px;
+}
+.logout-content h4 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-logout {
+    --background: rgb(150, 0, 0);
+}

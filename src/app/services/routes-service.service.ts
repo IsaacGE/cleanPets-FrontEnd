@@ -4,14 +4,14 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class CuentaService {
+export class RoutesServiceService {
 
-  constructor(private enviar:Router) { }
+  constructor(private route:Router) { }
 
   EnviarAcount() {
-    this.enviar.navigate(['acount'])
+    this.route.navigate(['acount'])
   }
   Enviarlogin() {
-    this.enviar.navigate(['/'])
+    this.route.navigate(['/'])
   }
 }

@@ -1,16 +1,17 @@
 <ion-content [fullscreen]="true" id="content">
-      <ion-card class="tarjetas">
+  <ion-text color="red" *ngIf='userService.usersList.length == 0'>
+    No hay clietnes registrados
+  </ion-text>
+
+      <ion-card class="tarjetas" *ngFor='let user of userService.usersList; let i = index'>
         <ion-card-header>
-          <ion-card-title>Cliente id: 15425</ion-card-title>
+          <ion-card-title>{{user.tNombre}} {{user.tApellido}}</ion-card-title>
         </ion-card-header>
-      
         <ion-card-content>
-          <p>Nombre: Gerardo</p>
-          <p>Apellido: Gutierrez</p>
-          <p>Nombre Usuario: Geras</p>
-          <p>Telefono: 4492784957</p>
-          <p>Fecha de registro: 17/11/21</p>
-          <p>UsuarioActivo: Activo</p>
+          <p>Nombre de Usuario: {{user.tNombreUsuario}}</p>
+          <p>Telefono: {{user.tTelefono}}</p>
+          <p>Fecha Registro: {{user.fhFechaRegistro.toLocaleString()}}</p>
+          <p>Usuario Activo: {{user.bUsuarioActivo}}</p>
         </ion-card-content>
       </ion-card>
 </ion-content>

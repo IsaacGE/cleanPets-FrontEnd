@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CuentaService } from '../services/cuenta.service';
+import { Router } from '@angular/router';
+import { RoutesServiceService } from '../services/routes-service.service';
+import { UsuariosServiceService } from '../services/usuarios-service.service';
 
 @Component({
   selector: 'app-acount',
@@ -8,7 +10,9 @@ import { CuentaService } from '../services/cuenta.service';
 })
 export class AcountPage implements OnInit {
 
-  constructor(private cuestionarios:CuentaService) { }
+  constructor(public userService:UsuariosServiceService, public routerService:RoutesServiceService) {
+
+  }
 
   ngOnInit() {
   }
