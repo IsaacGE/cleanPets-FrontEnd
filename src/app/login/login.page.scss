@@ -2,15 +2,23 @@
     --background: url(../../assets/back.png);
     text-align: center;
     align-items: center;
+    
 }
 #content #container-form {
-    background-color: rgba(0, 0, 0, 0.836);
+    background-color: rgba(0, 0, 0, 0.801);
     border-radius: 5px;
-    width: 90%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
+    margin-top: 50px;
     padding: 5px;
+    backdrop-filter: blur(4px);
+}
+#container-form h3 {
+    text-align: center;
+    font-weight: 100;
+    color: #ffa229;
+    text-transform: uppercase;
 }
 #container-form #input {
     --background: none;
@@ -19,9 +27,18 @@
     border-bottom: 1px solid rgb(255, 162, 41);
 }
 #container-form .botones{
-    margin-top: 15px;
-    margin-left: 20%;
+    margin: 20px 15px 10px;
 }
-.botones ion-button{
-    width: 70%;
+#container-form .botones .login, .signUp {
+    width: 100%;
+    color: #fff;
+    font-weight: 100;
+    font-size: 11pt;
+    text-transform: uppercase;
+}
+#container-form .botones .login {
+    --background: #b86800;
+}
+#container-form .botones .signUp {
+    --background: #000;
 }

@@ -25,8 +25,8 @@
       <ion-input type="password" [(ngModel)]="userService.pass"></ion-input>
     </ion-item>
     <div class="botones">
-      <ion-button (click)='userService.registerClient()' expand="block">Crear cuenta</ion-button>
-      <ion-button (click)='routerService.Enviarlogin()' expand="block">Iniciar Sesión</ion-button>
+      <ion-button (click)='userService.registerClient()' class="signUp">Crear cuenta</ion-button>
+      <ion-button (click)='routerService.Enviarlogin()' class="login">Iniciar Sesión</ion-button>
     </div>
   </div>
 </ion-content>

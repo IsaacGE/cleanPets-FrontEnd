@@ -10,7 +10,7 @@
         <ion-card-content>
           <p>Nombre de Usuario: {{user.tNombreUsuario}}</p>
           <p>Telefono: {{user.tTelefono}}</p>
-          <p>Fecha Registro: {{user.fhFechaRegistro.toLocaleString()}}</p>
+          <p>Fecha Registro: {{user.fhFechaRegistro | date: "dd/MM/yyyy" }}</p>
           <p>Usuario Activo: {{user.bUsuarioActivo}}</p>
         </ion-card-content>
       </ion-card>
