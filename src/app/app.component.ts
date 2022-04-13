@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+
+  userRol:String
+
+  constructor(public authService:AuthService, private route:Router) {
+    
+    if (authService.loggedIn()) {
+      this.userRol = localStorage.getItem('userRol')
+      this.route.navigate([localStorage.getItem('userRol')])
+    } else {
+      this.route.navigate(['/'])
+    }
+  }
 }

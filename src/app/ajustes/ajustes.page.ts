@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-ajustes',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjustesPage implements OnInit {
 
-  constructor() { }
+  constructor(public authService:AuthService) { }
 
   ngOnInit() {
   }

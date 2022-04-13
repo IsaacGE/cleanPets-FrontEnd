@@ -1,20 +1,16 @@
 <ion-content [fullscreen]="true" id="content">
   <div id="container-form">
     <ion-item id="input">
-      <ion-label position="floating">Nombres</ion-label>
+      <ion-label position="floating">Nombre(s)</ion-label>
       <ion-input type="text" [(ngModel)]="userService.nombre"></ion-input>
     </ion-item>
     <ion-item id="input">
-      <ion-label position="floating">Apellidos</ion-label>
+      <ion-label position="floating">Apellido(s)</ion-label>
       <ion-input type="text" [(ngModel)]="userService.apellido"></ion-input>
     </ion-item>
     <ion-item id="input">
       <ion-label position="floating">Telefono</ion-label>
       <ion-input type="text" [(ngModel)]="userService.telefono"></ion-input>
-    </ion-item>
-    <ion-item id="input2">
-      <ion-label position="stacked">Subir imagen</ion-label>
-      <ion-input type="file" [(ngModel)]="userService.imgPerfil"></ion-input>
     </ion-item>
     <ion-item id="input">
       <ion-label position="floating">Username</ion-label>

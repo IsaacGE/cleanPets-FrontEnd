@@ -3,14 +3,14 @@
     <h3>Iniciar sesión</h3>
     <ion-item id="input">
       <ion-label position="floating">Nombre de Usuario:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]='authService.username'></ion-input>
     </ion-item>
     <ion-item id="input">
       <ion-label position="floating">Contraseña:</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]='authService.pass'></ion-input>
     </ion-item>
     <div class="botones">
-      <ion-button class="login">Iniciar Sesión</ion-button>
+      <ion-button class="login" (click)="authService.tryLogin()">Iniciar Sesión</ion-button>
       <ion-button (click)='routerService.EnviarAcount()' class="signUp">Crear cuenta</ion-button>
     </div>
   </div>

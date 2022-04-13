@@ -30,14 +30,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/clientes/citas',
+        redirectTo: '/user/citas',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/clientes/citas',
+    redirectTo: '/user/citas',
     pathMatch: 'full'
   }
 ];

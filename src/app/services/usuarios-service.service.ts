@@ -14,7 +14,6 @@ export class UsuariosServiceService {
   username: String
   telefono: String
   pass: String
-  imgPerfil: String
 
   constructor(private http: HttpClient) {
     this.nombre = ""
@@ -22,18 +21,8 @@ export class UsuariosServiceService {
     this.username = ""
     this.telefono = ""
     this.pass = ""
-    this.imgPerfil = ""
 
     this.usersList = []
-    this.http.get('http://localhost:3000/api/usuarios/getUsuarios').subscribe(
-      (res: any) => {
-        this.usersList = res.usuarios
-        console.log(res)
-      },
-      err => {
-        this.usersList = []
-      }
-    )
   }
 
   registerClient() {
@@ -42,8 +31,7 @@ export class UsuariosServiceService {
       apellido: this.apellido,
       userName: this.username,
       telefono: this.telefono,
-      contrasena: this.pass,
-      imgPerfil: this.imgPerfil
+      contrasena: this.pass
     }
     this.http.post('http://localhost:3000/api/usuarios/createUsuario', newUser).subscribe(
       (res: any) => {

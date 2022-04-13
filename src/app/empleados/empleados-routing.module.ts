@@ -22,14 +22,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/empleados/listaCitas',
+        redirectTo: '/employee/listaCitas',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/empleados/listaCitas',
+    redirectTo: '/employee/listaCitas',
     pathMatch: 'full'
   }
 ];
