@@ -1,14 +1,33 @@
 <ion-content [fullscreen]="true" id="content">
-    <ion-card class="tarjetas">
+    <div id="container-form">
+        <ion-item id="input2">
+            <ion-label position="stacked">
+                <ion-icon name="search-outline"></ion-icon>
+                Buscar citas
+            </ion-label>
+            <ion-input [(ngModel)]="SearchText" type="text"></ion-input>
+        </ion-item>
+    </div>
+    <ion-card class="tarjetas" *ngFor='let citasAux of servicioCitas.citasList | filter:SearchText; let i = index'>
         <ion-card-header>
-          <ion-card-title>Titular: </ion-card-title>
+            <ion-card-title>Titular: {{citasAux.tTitular}}</ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-          <p>Telefono: </p>
-          <p>Fecha cita: </p>
-          <p>Servicio: </p>
-          <p>Mascota: </p>
+            <p>Telefono: {{citasAux.tTelefono}}</p>
+            <p>Fecha cita: {{citasAux.fhFechaCita}}</p>
+            <p>Servicio: {{citasAux.tServicio}}</p>
+            <p>Hora: {{citasAux.tHora}}</p>
+            <p>Mascota: {{citasAux.tMascota}}</p>
         </ion-card-content>
-      </ion-card>
+        <ion-button class="editar" (click)="servicioCitas.editarCita()">
+            <ion-icon name="pencil-outline"></ion-icon>
+        </ion-button>
+        <ion-button class="desactivar" (click)="servicioCitas.desactivarCita()">
+            <ion-icon name="close-circle-outline"></ion-icon>
+        </ion-button>
+        <ion-button class="ticket">
+            <ion-icon name="ticket-outline"></ion-icon>
+        </ion-button>
+    </ion-card>
 </ion-content>

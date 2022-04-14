@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CitasServiceService } from 'src/app/services/citas-service.service';
 
 @Component({
   selector: 'app-lista-citas',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-citas.page.scss'],
 })
 export class ListaCitasPage implements OnInit {
+  SearchText: any
 
-  constructor() { }
+  constructor(public servicioCitas:CitasServiceService) {
+    this.servicioCitas.getCitas()
+    this.SearchText = ''
+  }
 
   ngOnInit() {
   }

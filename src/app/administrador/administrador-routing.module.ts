@@ -9,10 +9,6 @@ const routes: Routes = [
     component: AdministradorPage,
     children: [
       {
-        path: 'bitacoraAcceso',
-        loadChildren: () => import('../vista-admin/bitacora-acceso/bitacora-acceso.module').then(m => m.BitacoraAccesoPageModule)
-      },
-      {
         path: 'empleadosCtrl',
         loadChildren: () => import('../vista-admin/empleados-form/empleados-form.module').then(m => m.EmpleadosFormPageModule)
       },
@@ -25,19 +21,23 @@ const routes: Routes = [
         loadChildren: () => import('../vista-admin/lista-citas/lista-citas.module').then(m => m.ListaCitasPageModule)
       },
       {
+        path: 'listaEmpleados',
+        loadChildren: () => import('../vista-admin/lista-empleados/lista-empleados.module').then(m => m.ListaEmpleadosPageModule)
+      },
+      {
         path: 'ajustes',
         loadChildren: () => import('../ajustes/ajustes.module').then(m => m.AjustesPageModule)
       },
       {
         path: '',
-        redirectTo: '/admin/bitacoraAcceso',
+        redirectTo: '/admin/empleadosCtrl',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/admin/bitacoraAcceso',
+    redirectTo: '/admin/empleadosCtrl',
     pathMatch: 'full'
   }
 ];

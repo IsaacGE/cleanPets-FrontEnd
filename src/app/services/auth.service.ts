@@ -12,6 +12,11 @@ export class AuthService {
 
   readonly URL_API = `${environment.urlGlobal}`;
 
+  nombre: String
+  apellido: String
+  telefono: String
+  codPersonal: String
+
   username: String
   pass: String 
 
@@ -25,6 +30,35 @@ export class AuthService {
     this.pass = ''
 
     this.idRolUser = ''
+  }
+
+  registerUser() {
+    let newUser = {
+      nombre: this.nombre,
+      apellido: this.apellido,
+      nombreUsuario: this.username,
+      pass: this.pass, 
+      telefono: this.telefono
+    }
+    this.http.post(`${this.URL_API}/auth/signup`, newUser).subscribe(
+      async (res: any) => {
+        console.log(res)
+        console.log("User Register success!")
+        const alert = await this.alert.create({
+          cssClass: 'alert-regis-true',
+          header: 'Registro Exitoso',
+          message: 'Ahora ingresa con tu nuevo usuario',
+          buttons: ['OK']
+        });
+        this.clearData()
+        await alert.present();
+        this.route.navigate(['/'])
+      },
+      err => {
+        console.log("User Register error: ")
+        throw err
+      }
+    )
   }
 
   tryLogin() {
@@ -57,6 +91,7 @@ export class AuthService {
             message: 'Tu nombre de usuario y/o contraseña no coinciden',
             buttons: ['OK']
           });
+          this.clearData()
           await alert.present();
         }
       },
@@ -78,6 +113,9 @@ export class AuthService {
   clearData() {
     this.username = ''
     this.pass = ''
+    this.nombre = ''
+    this.apellido = ''
+    this.telefono = ''
   }
 
 
@@ -87,12 +125,14 @@ export class AuthService {
 
     this.http.get(`${this.URL_API}/usuarios/getUsuario?id=${idUser}`).subscribe(
       (res:any) => {
-        this.idRolUser = res.rol
+        console.log("ID USUARIO CONSULYADDO: "+idUser)
+        this.idRolUser = res.rol 
+        console.log("ESTE ES EL ID DE ROL USUARIO =>"+this.idRolUser)
         //next =>
-        this.http.get(`${this.URL_API}/roles/getRolName?id=${this.idRolUser}`).subscribe(
-          (res:any) => {
-            localStorage.setItem('userRol', res.tNombre)
-            console.log(res)
+        this.http.get(`${this.URL_API}/roles/getRolName?idRol=${this.idRolUser}`).subscribe(
+          (resRol:any) => {
+            localStorage.setItem('userRol', resRol.tNombre)
+            console.log("RESPUSTA DDE GET NAME ROL: "+resRol)
           },
           err => {
             console.log("Error al obtener nombre de rol")

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
-  selector: 'app-empleados-form',
-  templateUrl: './empleados-form.page.html',
-  styleUrls: ['./empleados-form.page.scss'],
+  selector: 'app-lista-empleados',
+  templateUrl: './lista-empleados.page.html',
+  styleUrls: ['./lista-empleados.page.scss'],
 })
-export class EmpleadosFormPage implements OnInit {
+export class ListaEmpleadosPage implements OnInit {
 
   constructor(public empleadosService:EmpleadosService) { }
 

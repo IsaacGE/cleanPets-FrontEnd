@@ -1,53 +1,46 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {environment} from '../../environments/environment'
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
 
 
 @Injectable({
   providedIn: 'root'
 })
+
+
+
 export class UsuariosServiceService {
 
   usersList: any[]
+
+  readonly URL_API = `${environment.urlGlobal}`;
 
   nombre: String
   apellido: String
   username: String
   telefono: String
   pass: String
+  newPass: String
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private alert:AlertController, private route: Router) {
     this.nombre = ""
     this.apellido = ""
     this.username = ""
     this.telefono = ""
     this.pass = ""
+    this.newPass = ''
 
     this.usersList = []
   }
 
-  registerClient() {
-    let newUser = {
-      nombre: this.nombre,
-      apellido: this.apellido,
-      userName: this.username,
-      telefono: this.telefono,
-      contrasena: this.pass
-    }
-    this.http.post('http://localhost:3000/api/usuarios/createUsuario', newUser).subscribe(
-      (res: any) => {
-        console.log(res)
-        console.log("User Register success!")
-      },
-      err => {
-        console.log("User Register error: ")
-        throw err
-      }
-    )
-  }
+  
 
   getUsers() {
     this.usersList = []
-    this.http.get('http://localhost:3000/api/usuarios/getUsuarios').subscribe(
+    this.http.get(`${this.URL_API}/usaurios/getUsuarios`).subscribe(
       (res: any) => {
         this.usersList = res.usuarios
         console.log(res)
@@ -58,6 +51,58 @@ export class UsuariosServiceService {
         throw err
       }
     )
+  }
+
+  async updatePass() {
+    let user:any = jwt_decode(localStorage.getItem('token'));
+    let idUser = user.id;
+    let passWords = {
+      id: idUser,
+      pass: this.pass,
+      newPass: this.newPass
+    }
+    const confirm = await this.alert.create({
+      header: '¿Actualizar contraseña?',
+      message: 'Estas apunto de actualizar la contraseña',
+      buttons: [
+        {
+          text: 'Actualizar',
+          role: 'Ok',
+          handler: () => {
+            this.http.post(`${this.URL_API}/usuarios/updatePass`, passWords).subscribe(
+              async (res:any) => {
+                console.log(res)
+                if (res.ok) {
+                  const alert = await this.alert.create({
+                    cssClass: 'alert-login-true',
+                    header: 'Cerraando sesión...',
+                    message: 'Vuelve a iniciar sesión',
+                    buttons: ['OK']
+                  });
+                  await alert.present();
+                  localStorage.removeItem('token')
+                  localStorage.removeItem('userRol')
+                  this.route.navigate(['/'])
+                } else {
+                  const alert = await this.alert.create({
+                    cssClass: 'alert-login-true',
+                    header: 'Contraseña incorrecta',
+                    message: 'Intenta nuevamente',
+                    buttons: ['OK']
+                  });
+                  await alert.present();
+                }
+              }
+            )
+          }
+        },
+        {
+          text: 'Cancelar',
+          role: 'Cancel'
+        }
+      ]
+    });
+    await confirm.present();
   }
 
 }

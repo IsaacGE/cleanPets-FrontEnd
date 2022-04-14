@@ -26,7 +26,11 @@ const routes: Routes = [
     path: '',
     redirectTo: '/login',
     pathMatch: 'full'
+  },  {
+    path: 'lista-empleados',
+    loadChildren: () => import('./vista-admin/lista-empleados/lista-empleados.module').then( m => m.ListaEmpleadosPageModule)
   }
+
 ];
 @NgModule({
   imports: [

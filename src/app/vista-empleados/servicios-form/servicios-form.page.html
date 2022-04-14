@@ -1,21 +1,42 @@
-<ion-content [fullscreen]="true" id="content">
-  <div id="container-form">
-    <ion-item id="input">
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item id="input">
-      <ion-label position="floating">Descripcion</ion-label>
-      <ion-textarea type="text"></ion-textarea>
-    </ion-item>
-    <ion-item id="input">
-      <ion-label position="floating">Precio</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <ion-item id="input">
-      <ion-label position="floating">Duración</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-button id="Boton-entrar" expand="block">Confirmar cita</ion-button>
-  </div>
+<ion-content id='content' [fullscreen]="true">
+    <div id="container-form">
+        <ion-item id="input">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input [(ngModel)]="serviciosservice.nombre" type="text"></ion-input>
+        </ion-item>
+        <ion-item id="input">
+            <ion-label position="floating">Descripcion</ion-label>
+            <ion-textarea [(ngModel)]="serviciosservice.descripcion" type="text"></ion-textarea>
+        </ion-item>
+        <ion-item id="input">
+            <ion-label position="floating">Precio</ion-label>
+            <ion-input [(ngModel)]="serviciosservice.costo" type="number"></ion-input>
+        </ion-item>
+        <ion-item id="input">
+            <ion-label position="floating">Duración</ion-label>
+            <ion-input [(ngModel)]="serviciosservice.tiempo" type="text"></ion-input>
+        </ion-item>
+        <ion-button id="Boton-entrar" expand="block" (click)="serviciosservice.crearServicio()">Agregar servicio</ion-button>
+    </div>
+
+    <ion-text color="red" *ngIf='serviciosservice.serviciosList.length == 0'>
+        No hay Servicios registrados
+    </ion-text>
+
+    <ion-card class="tarjetas" *ngFor='let servicios of serviciosservice.serviciosList'>
+        <ion-card-header>
+            <ion-card-title>{{servicios.tNombre}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <p>Descripcion:{{servicios.tDescripcion}}</p>
+            <p>Precio:{{servicios.dCosto}}</p>
+            <p>Duracion:{{servicios.tTiempo}}</p>
+            <p *ngIf='servicios.bServicioActivo'>Estatus: Activo</p>
+            <p *ngIf='!servicios.bServicioActivo'>Estatus: Desactivado</p>
+            <ion-button class="Desactivar" (click)="serviciosservice.alertaDelete(servicios._id, !servicios.bServicioActivo)">
+                <ion-icon name="close-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

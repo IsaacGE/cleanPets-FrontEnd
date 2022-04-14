@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true" id="content">
+    <ion-text color="red" *ngIf='empleadosService.empleadoslist.length == 0'>
+        No hay clietnes registrados
+    </ion-text>
+    <div *ngFor='let empleados of empleadosService.empleadoslist; let i = index'>
+        <ion-card class="tarjetas" *ngIf='empleadosService.rolEmployee== empleados.rol'>
+            <ion-card-header>
+                <ion-card-title>{{empleados.tNombre}} {{empleados.tApellido}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <p>Nombre de Usuario: {{empleados.tNombreUsuario}}</p>
+                <p>Nombre: {{empleados.tNomnre}} {{empleados.tApellido}}</p>
+                <p>Telefono: {{empleados.tTelefono}}</p>
+                <p>Codigo de personal: {{empleados.tCodPersonal}}</p>
+                <p>Usuario Activo: {{empleados.bUsuarioActivo}}</p>
+                <ion-button class="ion-justify-content-end" id="Boton-entrar" expand="block" (click)="empleadosService.alertaDelete(empleados._id,empleados.bUsuarioActivo)">X</ion-button>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>

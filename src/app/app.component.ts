@@ -17,7 +17,7 @@ export class AppComponent {
       this.userRol = localStorage.getItem('userRol')
       this.route.navigate([localStorage.getItem('userRol')])
     } else {
-      this.route.navigate(['/'])
+      this.route.navigate(['/']) 
     }
   }
 }

@@ -3,6 +3,7 @@
     text-align: center;
     align-items: center;
 }
+
 #content #container-form {
     background-color: rgba(0, 0, 0, 0.836);
     width: 90%;
@@ -11,12 +12,14 @@
     margin-top: 15%;
     padding: 5px;
 }
+
 #container-form #input {
     --background: none;
     color: rgb(255, 162, 41);
     margin-bottom: 10px;
     border-bottom: 1px solid rgb(255, 162, 41);
 }
+
 #container-form #input2 {
     --background: none;
     color: rgb(255, 162, 41);
@@ -24,6 +27,7 @@
     margin-top: 17px;
     border-bottom: 1px solid rgb(255, 162, 41);
 }
+
 #container-form ion-button {
     margin-top: 40px;
     width: 50%;

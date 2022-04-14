@@ -1,0 +1,23 @@
+#content .tarjetas {
+    text-align: justify;
+    color: white;
+    background: rgba(0, 0, 0, 0.836);
+}
+
+#content .tarjetas ion-card-header ion-card-title {
+    color: white;
+}
+
+#content .tarjetas ion-button {
+    --background: rgb(223, 17, 17);
+    color: black;
+    width: 15%;
+}
+
+#content .tarjetas .boton {
+    align-items: center;
+}
+
+#Boton-entrar {
+    float: right;
+}

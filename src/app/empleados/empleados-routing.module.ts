@@ -9,10 +9,6 @@ const routes: Routes = [
     component: EmpleadosPage,
     children: [
       {
-        path: 'listaCitas',
-        loadChildren: () => import('../vista-empleados/lista-citas/lista-citas.module').then(m => m.ListaCitasPageModule)
-      },
-      {
         path: 'serviciosCtrl',
         loadChildren: () => import('../vista-empleados/servicios-form/servicios-form.module').then(m => m.ServiciosFormPageModule)
       },
@@ -22,14 +18,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/employee/listaCitas',
+        redirectTo: '/employee/serviciosCtrl',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/employee/listaCitas',
+    redirectTo: '/employee/serviciosCtrl',
     pathMatch: 'full'
   }
 ];

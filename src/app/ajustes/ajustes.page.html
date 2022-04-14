@@ -1,36 +1,44 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Ajustes</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Ajustes</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container">
-    <h3 class="title">Configuración de perfil</h3>
-  <ion-card>
-    <h4><ion-icon name="key-outline"></ion-icon> Cambia tu Contraseña</h4>
-    <ion-item>
-      <ion-label position="floating"><ion-icon name="key-outline"></ion-icon> Nueva contraseña:</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating"><ion-icon name="key-outline"></ion-icon> Contraseña actual:</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <ion-button class="btn-update"><ion-icon name="checkmark-circle-outline"></ion-icon> Actualizar</ion-button>
-  </ion-card>
+    <div class="container">
+        <h3 class="title">Configuración de perfil</h3>
+        <ion-card>
+            <h4>
+                <ion-icon name="key-outline"></ion-icon> Cambia tu Contraseña</h4>
+            <ion-item>
+                <ion-label position="floating">
+                    <ion-icon name="key-outline"></ion-icon> Nueva contraseña:</ion-label>
+                <ion-input type="password" [(ngModel)]="usuarioService.newPass"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">
+                    <ion-icon name="key-outline"></ion-icon> Contraseña actual:</ion-label>
+                <ion-input type="password" [(ngModel)]="usuarioService.pass"></ion-input>
+            </ion-item>
+            <ion-button class="btn-update" (click)='usuarioService.updatePass()'>
+                <ion-icon name="checkmark-circle-outline"></ion-icon> Actualizar</ion-button>
+        </ion-card>
 
-  <ion-card>
-    <h4><ion-icon name="person-circle-outline"></ion-icon> Actualizar foto de perfil</h4>
-    <ion-item>
-      <ion-label><ion-icon name="image-outline"></ion-icon> Imagen</ion-label>
-      <ion-input type="file"></ion-input>
-    </ion-item>
-    <ion-button class="btn-update"><ion-icon name="arrow-up-circle-outline"></ion-icon> Actualizar</ion-button>
-  </ion-card>
-  <div class="logout-content">
-    <h4>Cerrar Sesión</h4>
-    <ion-button class="btn-logout" (click)="authService.logout()"><ion-icon name="exit-outline"></ion-icon> Salir</ion-button>
-  </div>
-  </div>
+        <ion-card>
+            <h4>
+                <ion-icon name="person-circle-outline"></ion-icon> Actualizar foto de perfil</h4>
+            <ion-item>
+                <ion-label>
+                    <ion-icon name="image-outline"></ion-icon> Imagen</ion-label>
+                <ion-input type="file"></ion-input>
+            </ion-item>
+            <ion-button class="btn-update">
+                <ion-icon name="arrow-up-circle-outline"></ion-icon> Actualizar</ion-button>
+        </ion-card>
+        <div class="logout-content">
+            <h4>Cerrar Sesión</h4>
+            <ion-button class="btn-logout" (click)='authService.logout()'>
+                <ion-icon name="exit-outline"></ion-icon> Salir</ion-button>
+        </div>
+    </div>
 </ion-content>

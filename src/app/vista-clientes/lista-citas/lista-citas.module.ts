@@ -8,12 +8,15 @@ import { ListaCitasPageRoutingModule } from './lista-citas-routing.module';
 
 import { ListaCitasPage } from './lista-citas.page';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListaCitasPageRoutingModule
+    ListaCitasPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [ListaCitasPage]
 })
